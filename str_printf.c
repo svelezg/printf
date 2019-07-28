@@ -39,6 +39,13 @@ while (*(format + index))
 			*(str +  position) = '%';
 			position++;
 		}
+		else if (*(format + index + 1) != 'c' && *(format + index + 1) != 's')
+		{
+			*(str +  position) = '%';
+			position++;
+			*(str +  position) = *(format + index + 1);
+			position++;
+		}
 		index = index + 2;
 	}
 	else

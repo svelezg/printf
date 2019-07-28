@@ -36,6 +36,9 @@ while (*(format + index))
 		}
 		if (*(format + index + 1) == '%')
 			size++;
+
+		else if (*(format + index + 1) != 'c' && *(format + index + 1) != 's')
+			size = size + 2;
 		index = index + 2;
 	}
 	else
