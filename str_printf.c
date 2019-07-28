@@ -34,6 +34,11 @@ while (*(format + index))
 			}
 		index_struct++;
 		}
+		if (*(format + index + 1) == '%')
+		{
+			*(str +  position) = '%';
+			position++;
+		}
 		index = index + 2;
 	}
 	else
