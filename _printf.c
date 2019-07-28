@@ -22,7 +22,6 @@ va_copy(valist_write, valist_size);
 if (!format)
 	return (0);
 size = size_printf(format, valist_size);
-printf("%i\n", size);
 str = (char *)malloc(sizeof(char) * (size));
 if (str  == NULL)
 	return (0);
