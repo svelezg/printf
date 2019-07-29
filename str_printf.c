@@ -5,7 +5,7 @@
 #include "holberton.h"
 
 /**
- * size_additional - Replicates the c standar library printf() function
+ * size_additional_str - Replicates the c standar library printf() function
  * @character: The operator
  * @position: The operator
  * @str: The operator
