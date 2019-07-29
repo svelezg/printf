@@ -20,7 +20,7 @@ char *str;
 va_start(valist_size, format);
 va_copy(valist_write, valist_size);
 if (!format)
-	return (0);
+	return (-1);
 size = size_printf(format, valist_size);
 str = (char *)malloc(sizeof(char) * (size));
 if (str  == NULL)
