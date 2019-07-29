@@ -25,7 +25,7 @@ if (!format || (*format == '%' && !*(format + 1)))
 	return (-1);
 
 if (*format == '%' && *(format + 1) == ' ' && !*(format + 2))
-        return (-1);
+	return (-1);
 
 size = size_printf(format, valist_size);
 str = (char *)malloc(sizeof(char) * (size));
