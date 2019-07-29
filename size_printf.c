@@ -5,27 +5,6 @@
 #include "holberton.h"
 
 /**
- * size_aditional - Replicates the c standar library printf() function
- * @character: The operator
- * @size: list
- *
- * Return: number of  characters printed
- */
-int size_aditional(char character, int size)
-{
-if (character == '%')
-{
-	size++;
-}
-else if (character != 'c' && character != 's')
-{
-	size = size + 2;
-}
-return (size);
-}
-
-
-/**
  * size_printf - Replicates the c standar library printf() function
  * @format: The operator
  * @valist: list
@@ -53,9 +32,13 @@ while (*(format + index))
 			{
 			size = (func_size[index_struct].f(valist, size));
 			}
-		size = size_aditional(*(format + index +  1), size);
 		index_struct++;
 		}
+		if (*(format + index + 1) == '%')
+			size++;
+
+		else if (*(format + index + 1) != 'c' && *(format + index + 1) != 's')
+			size = size + 2;
 		index = index + 2;
 	}
 	else
@@ -67,4 +50,5 @@ while (*(format + index))
 size = size + 1;
 return (size);
 }
+
 
