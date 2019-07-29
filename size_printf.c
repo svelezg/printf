@@ -20,7 +20,6 @@ if (character == '%')
 else if (character != 'c' && character != 's')
 {
 	size = size + 2;
-	printf("size = %i\n", size);
 }
 return (size);
 }
