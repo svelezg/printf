@@ -44,6 +44,9 @@ while (*(format + index))
 {
 	if (*(format + index) == '%')
 	{
+		if (!*(format + index + 1))
+			return (-1);
+
 		index_struct = 0;
 		while (func_size[index_struct].ops != NULL)
 		{
