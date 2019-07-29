@@ -30,7 +30,7 @@ if (*format == '%' && *(format + 1) == ' ' && !*(format + 2))
 size = size_printf(format, valist_size);
 str = (char *)malloc(sizeof(char) * (size));
 if (str  == NULL)
-	return (0);
+	return (-1);
 
 str_printf(format, valist_write, str);
 va_end(valist_write);
