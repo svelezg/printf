@@ -58,7 +58,7 @@ while (*(format + index))
 			}
 		index_struct++;
 		}
-		position = size_additional_str(*(format + index + 1), position, str);
+			position = size_additional_str(*(format + index + 1), position, str);
 		index = index + 2;
 	}
 	else
