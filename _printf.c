@@ -20,16 +20,11 @@ char *str;
 va_start(valist_size, format);
 va_copy(valist_write, valist_size);
 if (!format)
-	return (-1);
-
-if (size < 0)
-	return (-1);
-else
-	size = size_printf(format, valist_size);
-
+	return (0);
+size = size_printf(format, valist_size);
 str = (char *)malloc(sizeof(char) * (size));
 if (str  == NULL)
-	return (-1);
+	return (0);
 
 str_printf(format, valist_write, str);
 va_end(valist_write);
@@ -39,4 +34,5 @@ bytes = (int)write(1, str, size - 1);
 free(str);
 return (bytes);
 }
+
 
