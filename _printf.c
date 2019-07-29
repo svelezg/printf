@@ -20,16 +20,16 @@ char *str;
 va_start(valist_size, format);
 va_copy(valist_write, valist_size);
 if (!format)
-	return (0);
+	return (-1);
 
 if (size < 0)
-	return (0);
-/*else*/
+	return (-1);
+else
 	size = size_printf(format, valist_size);
 
 str = (char *)malloc(sizeof(char) * (size));
 if (str  == NULL)
-	return (0);
+	return (-1);
 
 str_printf(format, valist_write, str);
 va_end(valist_write);
