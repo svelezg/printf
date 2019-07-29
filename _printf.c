@@ -20,6 +20,7 @@ char *str;
 va_start(valist_size, format);
 va_copy(valist_write, valist_size);
 
+
 if (!format || (*format == '%' && !*(format + 1)))
 	return (-1);
 
