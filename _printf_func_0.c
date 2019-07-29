@@ -11,7 +11,12 @@
 int size_char(va_list valist, int size)
 {
 char vble;
+
 vble = va_arg(valist, int);
+
+if (!vble)
+	return (-1);
+
 if (vble != '\0')
 	size++;
 return (size);
@@ -29,6 +34,7 @@ int size_string(va_list valist, int size)
 {
 char *vble;
 int index = 0;
+
 vble = va_arg(valist, char *);
 
 if (vble == NULL)
@@ -57,8 +63,9 @@ int char_printf(va_list valist, char *str)
 int position = 0;
 char  vble;
 
-position++;
 vble = va_arg(valist, int);
+
+position++;
 *(str) = vble;
 return (position);
 }
