@@ -6,7 +6,7 @@
 
 /**
  * size_aditional - Replicates the c standar library printf() function
- * @format: The operator
+ * @character: The operator
  * @size: list
  *
  * Return: number of  characters printed
