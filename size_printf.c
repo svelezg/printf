@@ -20,7 +20,6 @@ if (character == '%')
 else if (character != 'c' && character != 's')
 {
 	size = size + 2;
-	printf("size = %i\n", size);
 }
 return (size);
 }
@@ -33,7 +32,7 @@ return (size);
  */
 int size_printf(const char * const format, va_list valist)
 {
-int size = 0, index = 0, index_struct = 0, a = 1;
+int size = 0, index = 0, index_struct = 0;
 
 op_s_t func_size[] = {
 	{"c", size_char},
@@ -51,14 +50,11 @@ while (*(format + index))
 			if (*(format + index + 1) == *(func_size[index_struct].ops))
 			{
 			size = (func_size[index_struct].f(valist, size));
-			a = 0;
 			}
 		index_struct++;
 		}
-		if (a = 1)
-			size = size_additional(*(format + index + 1), size);
+		size = size_additional(*(format + index +  1), size);
 		index = index + 2;
-		a = 1;
 	}
 	else
 	{
