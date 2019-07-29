@@ -30,6 +30,12 @@ int size_string(va_list valist, int size)
 char *vble;
 int index = 0;
 vble = va_arg(valist, char *);
+
+if (vble == NULL)
+{
+	size = size + 6;
+	return (size);
+}
 while (*(vble + index) != '\0')
 {
 	size++;
@@ -68,8 +74,14 @@ return (position);
 int string_printf(va_list valist, char *str)
 {
 int position = 0;
-char *vble;
+char *vble, *null;
+
+null = "(null)";
 vble = va_arg(valist, char *);
+
+if (vble == NULL)
+	vble = null;
+
 while (*(vble + position) != '\0')
 {
 	*(str + position) = *(vble + position);
