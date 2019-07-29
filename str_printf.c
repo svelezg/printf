@@ -5,6 +5,30 @@
 #include "holberton.h"
 
 /**
+ * size_additional - Replicates the c standar library printf() function
+ * @character: The operator
+ * @position: The operator
+ * @str: The operator
+ *
+ * Return: number of  characters printed
+ */
+int size_additional_str(char character, int  position, char *str)
+{
+if (character == '%')
+{
+	*(str +  position) = '%';
+	position++;
+}
+else if (character != 'c' && character  != 's')
+{
+	*(str +  position) = '%';
+	position++;
+	*(str +  position) = character;
+	position++;
+}
+return (position);
+}
+/**
  * str_printf - Replicates the c standar library printf() function
  * @format: The operator
  * @valist: The operator
@@ -34,18 +58,7 @@ while (*(format + index))
 			}
 		index_struct++;
 		}
-		if (*(format + index + 1) == '%')
-		{
-			*(str +  position) = '%';
-			position++;
-		}
-		else if (*(format + index + 1) != 'c' && *(format + index + 1) != 's')
-		{
-			*(str +  position) = '%';
-			position++;
-			*(str +  position) = *(format + index + 1);
-			position++;
-		}
+		position = size_additional_str(*(format + index + 1), position, str);
 		index = index + 2;
 	}
 	else
