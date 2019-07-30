@@ -2,7 +2,7 @@
 #include "holberton.h"
 #include <stdarg.h>
 
-int number_recursion(int num, char *str, int position);
+/*int number_recursion(int num, char *str, int position, int sign);*/
 
 /**
  * size_decimal - Replicates the c standar library printf() function
@@ -34,7 +34,6 @@ return (size);
 int size_integer(va_list valist, int size)
 {
 int vble;
-
 vble = va_arg(valist, int);
 
 if (vble == 0)
@@ -62,7 +61,7 @@ if (vble == 0)
 	*(str +  position) = '0';
 	return (1);
 }
-position = number_recursion(vble, str, position);
+position = number_recursion(vble, str, position, 1);
 return (position);
 }
 
@@ -71,14 +70,15 @@ return (position);
  * @vble: number to print
  * @str: char pointer to write
  * @position: position
+ * @sign: sign
  *
  * Return: number of  characters printed
  */
-int number_recursion(int vble, char *str, int position)
+int number_recursion(int vble, char *str, int position, int sign)
 {
 unsigned int num = 0;
 
-if (vble % 10 < 0)
+if (vble % 10 < 0 && sign == 1)
 {
 	*(str +  position) = '-';
 	position++;
@@ -86,7 +86,7 @@ if (vble % 10 < 0)
 }
 else
 {
-	 num = vble;
+num = vble;
 }
 
 /*printf("Number= %i, Str= %s, Position= %i\n", num, str, position);*/
@@ -99,7 +99,7 @@ if (num < 10)
 }
 else
 {
-	position = number_recursion(num / 10, str, position);
+	position = number_recursion(num / 10, str, position, sign);
 	*(str +  position) = '0' + (num % 10);
 /*	printf("Number= %i, Str= %s, Position= %i\n", num, str, position);*/
 	position++;
@@ -125,7 +125,7 @@ if (vble == 0)
 	*(str +  position) = '0';
 	return (1);
 }
-position = number_recursion(vble, str, position);
+position = number_recursion(vble, str, position, 1);
 return (position);
 }
 
