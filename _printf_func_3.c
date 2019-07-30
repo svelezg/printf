@@ -21,7 +21,7 @@ int size_hex_l(va_list valist, int size)
 /**
  * hex_l_printf - Replicates the c standar library printf() function
  * @valist: The operator
- * @str: The operator
+ * @str: The operator str
  *
  * Return: number of  characters printed
  */

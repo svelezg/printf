@@ -78,6 +78,14 @@ while (*(number + position))
 }
 return (position);
 }
+
+/**
+ * unsigned_printf - Replicates the c standar library printf() function
+ * @valist: The operator
+ * @str: The operator
+ *
+ * Return: number of  characters printed
+ */
 int unsigned_printf(va_list valist, char *str)
 {
 int position = 0;

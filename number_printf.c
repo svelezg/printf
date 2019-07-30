@@ -35,23 +35,23 @@ return (cnt);
 */
 char *convert(unsigned int num, int base, int upper)
 {
-	static char RepresentationU[] = "0123456789ABCDEF";
-	static char RepresentationL[] = "0123456789abcdef";
-	static char buffer[50];
-	char *ptr;
+static const char RepresentationU[] = "0123456789ABCDEF";
+static const char RepresentationL[] = "0123456789abcdef";
+static char buffer[50];
+char *ptr;
 
-	ptr = &buffer[49];
-	*ptr = '\0';
+ptr = &buffer[49];
+*ptr = '\0';
 
-	do {
-		if (upper)
-			*--ptr = RepresentationU[num % base];
-		else
-			*--ptr = RepresentationL[num % base];
+do {
+	if (upper)
+		*--ptr = RepresentationU[num % base];
+	else
+		*--ptr = RepresentationL[num % base];
 		num /= base;
-	} while (num != 0);
+} while (num != 0);
 
-	return (ptr);
+return (ptr);
 }
 /**
  * size_convert  - Capitalizes String
@@ -64,7 +64,7 @@ char *convert(unsigned int num, int base, int upper)
 */
 int size_convert(unsigned int num, int base)
 {
-	static char Representation[]= "0123456789ABCDEF";
+	static const char Representation[] = "0123456789ABCDEF";
 	static char buffer[50];
 	char *ptr;
 	int size = 0;
@@ -77,6 +77,6 @@ int size_convert(unsigned int num, int base)
 		num /= base;
 		size++;
 	} while (num != 0);
-	
+
 	return (size);
 }

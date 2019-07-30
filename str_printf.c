@@ -19,9 +19,10 @@ if (character == '%')
 	*(str +  position) = '%';
 	position++;
 }
-else if (character != 'c' && character  != 's' && character != 'd' &&
-	character != 'i' && character != 'b' && character != 'R' && character != 'o'
-	&& character != 'x' && character != 'X' && character != 'u')
+else if (character != 'c' && character  != 's' && character != 'd'
+	&& character != 'i' && character != 'b' && character != 'R'
+	&& character != 'o' && character != 'x' && character != 'X'
+	&& character != 'u')
 {
 	*(str +  position) = '%';
 	position++;
