@@ -12,22 +12,26 @@ char *str_printf(const char *format, va_list valist, char *str);
 int size_printf(const char *const format, va_list valist);
 int size_number(int n);
 
-
-
 int size_char(va_list valist, int size);
 int size_string(va_list valist, int size);
 int size_decimal(va_list valist, int size);
 int size_integer(va_list valist, int size);
 int size_percentage(int size);
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 62eecb3... task rot13
 
 int char_printf(va_list valist, char *str);
 int string_printf(va_list valist, char *str);
 int decimal_printf(va_list valist, char *str);
 int integer_printf(va_list valist, char *str);
 int percentage_printf(char *str);
+<<<<<<< HEAD
 
 int rot13(va_list valist, char *str);
+=======
+>>>>>>> parent of 62eecb3... task rot13
 
 /**
  * struct op_size - Struct op

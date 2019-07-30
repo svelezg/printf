@@ -18,7 +18,7 @@ if (character == '%')
 	size++;
 }
 else if (character != 'c' && character != 's' &&  character != 'd' &&
-	character != 'i' && character != 'b' && character != 'R')
+	character != 'i')
 {
 	size = size + 2;
 }
@@ -40,7 +40,6 @@ op_s_t func_size[] = {
 	{"s", size_string},
 	{"d", size_decimal},
 	{"i", size_integer},
-	{"R", size_string},
 	{NULL, NULL}
 };
 
