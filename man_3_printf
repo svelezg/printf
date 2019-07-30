@@ -25,9 +25,9 @@ Print ARGUMENT(s) according to FORMAT, or execute according to OPTION
        FORMAT controls the output as in C printf.  Interpreted sequences are:
 
 
-      \"     double quote
+       \"      double quote
 
-       \\     backslash
+       \\      backslash
 
        \\a     alert (BEL)
 
@@ -76,6 +76,15 @@ A character that specifies the type of conversion to be applied.
 The conversion specifiers and their meanings are:
 .RE
 
+
+.B b
+.RS
+The unsigned int argument is converted to unsigned binary notation.
+A binary number is a number expressed in the base-2 numeral system or binary 
+numeral system, which uses only two symbols: typically "0" (zero) and "1" (one).
+The base-2 numeral system is a positional notation with a radix of 2.
+.RE
+
 .B d, i
 .RS 
 The int argument is converted to signed decimal notation. 
@@ -93,13 +102,38 @@ a call to the wcrtomb(3) function, with a conversion state starting in the initi
 and the resulting multibyte string is written.
 .RE
 
+.B R
+.RS
+Usess the ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13).
+Which is a simple letter substitution cipher that replaces a letter with the 13th 
+letter after it, in the alphabet. ROT13 is a special case of the Caesar cipher which was 
+developed in ancient Rome. All other behaviour is as with the specifier s.
+.RE
+
+.B o
+.RS
+The unigned int argument is converted to unsigned octal notation.
+The octal numeral system, or oct for short, is the base-8 number system, and uses the digits 0 to 7. 
+Octal numerals can be made from binary numerals by grouping consecutive binary digits into groups of 
+three (starting from the right).
+.RE
+
 .B s
 .RS
-.PP The const char * argument is expected to be a pointer to an array of character type (pointer to a string). 
+The const char * argument is expected to be a pointer to an array of character type (pointer to a string). 
 Characters from the array are written up to (but not including) a terminating null byte ('\0'); 
 if a precision is specified, no more than the number specified are written. 
 If a precision is given, no null byte need be present; if the precision is not specified, 
 or is greater than the size of the array, the array must contain a terminating null byte.
+.RE
+
+.B x X
+.RS
+The unigned int argument is converted to unsigned hexadecimal notation.
+The hexadecimal notation (also base 16, or hex) is a positional numeral system with a radix, 
+or base, of 16. It uses sixteen distinct symbols, the symbols "0""9" to represent values zero to nine, 
+and "A""F" (or alternatively "a""f") to represent values ten to fifteen.
+Lowercase x format if lowercase for the letter and X uppercase.
 .RE
 
 .SH OPTIONS
