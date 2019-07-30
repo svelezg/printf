@@ -20,7 +20,8 @@ if (character == '%')
 	position++;
 }
 else if (character != 'c' && character  != 's' && character != 'd' &&
-	character != 'i' && character != 'b' && character != 'R')
+	character != 'i' && character != 'b' && character != 'R' && character != 'o'
+	&& character != 'x' && character != 'X' && character != 'u')
 {
 	*(str +  position) = '%';
 	position++;
@@ -45,8 +46,13 @@ op_w_t func_write[] = {
 	{"c", char_printf},
 	{"s", string_printf},
 	{"d", decimal_printf},
-	{"i", integer_printf},
+	{"i", decimal_printf},
 	{"R", rot13_printf},
+	{"b", binary_printf},
+	{"o", octal_printf},
+	{"x", hex_l_printf},
+	{"X", hex_u_printf},
+	{"u", unsigned_printf},
 	{NULL, NULL}
 };
 while (*(format + index))

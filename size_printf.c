@@ -18,7 +18,8 @@ if (character == '%')
 	size++;
 }
 else if (character != 'c' && character != 's' &&  character != 'd' &&
-	character != 'i' && character != 'b' && character != 'R')
+	character != 'i' && character != 'b' && character != 'R'
+	&& character != 'o' && character != 'x' && character != 'X' && character != 'u')
 {
 	size = size + 2;
 }
@@ -41,6 +42,11 @@ op_s_t func_size[] = {
 	{"d", size_decimal},
 	{"i", size_integer},
 	{"R", size_string},
+	{"b", size_binary},
+	{"o", size_octal},
+	{"x", size_hex_l},
+	{"X", size_hex_u},
+	{"u", size_unsigned},
 	{NULL, NULL}
 };
 
