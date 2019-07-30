@@ -1,0 +1,117 @@
+.\" Manpage for printf.
+.\" Contact 887@holberton.com to correct errors or typos.
+.TH man 3 "29 July 2019" "1.0" "_printf man page"
+.SH NAME
+_printf  
+.SH SYNOPSIS
+#include "holberton.h"\fR
+.PP 
+_printf 
+.B FORMAT 
+.B [ARGUMENT]
+.B ...
+
+.SH DESCRIPTION
+The function 
+.B _printf()
+produces output according to a format as described below. 
+It writes output to stdout, the standard output stream; 
+The function writes the output under the control of a format string that specifies how subsequent 
+arguments (or arguments accessed via the variable-length argument facilities of stdarg(3)) are converted 
+for output.
+
+Print ARGUMENT(s) according to FORMAT, or execute according to OPTION
+
+       FORMAT controls the output as in C printf.  Interpreted sequences are:
+
+
+      \"     double quote
+
+       \\     backslash
+
+       \\a     alert (BEL)
+
+       \\b     backspace
+
+       \\c     produce no further output
+
+       \\e     escape
+
+       \\f     form feed
+
+       \\n     new line
+
+       \\r     carriage return
+
+       \\t     horizontal tab
+
+       \\v     vertical tab
+
+       \\NNN   byte with octal value NNN (1 to 3 digits)
+
+
+.B Return value
+.RS
+Upon successful return, the functions return the number of characters printed 
+(excluding the null byte used to end output to strings).
+If an output error is encountered, a negative value is returned.
+.RE
+
+.B Format of the format string
+.RS
+The format string is a character string, beginning and ending in its initial shift state, if any. 
+The format string is composed of zero or more directives: ordinary characters (not %), 
+which are copied unchanged to the output stream; and conversion specifications, 
+each of which results in fetching zero or more subsequent arguments. 
+Each conversion specification is introduced by the character %, 
+and ends with a conversion specifier. 
+In between there may be (in this order) zero or more flags, 
+an optional minimum field width, an optional precision and an optional length modifier.
+.RE
+
+.PP
+.B The conversion specifier
+.RS
+A character that specifies the type of conversion to be applied. 
+The conversion specifiers and their meanings are:
+.RE
+
+.B d, i
+.RS 
+The int argument is converted to signed decimal notation. 
+The precision, if any, gives the minimum number of digits that must appear; 
+if the converted value requires fewer digits, it is padded on the left with zeros. 
+The default precision is 1. When 0 is printed with an explicit precision 0, the output is empty.
+.RE
+
+.B c
+.RS
+If no l modifier is present, the int argument is converted to an unsigned char, 
+and the resulting character is written. If an l modifier is present, 
+the wint_t (wide character) argument is converted to a multibyte sequence by 
+a call to the wcrtomb(3) function, with a conversion state starting in the initial state, 
+and the resulting multibyte string is written.
+.RE
+
+.B s
+.RS
+.PP The const char * argument is expected to be a pointer to an array of character type (pointer to a string). 
+Characters from the array are written up to (but not including) a terminating null byte ('\0'); 
+if a precision is specified, no more than the number specified are written. 
+If a precision is given, no null byte need be present; if the precision is not specified, 
+or is greater than the size of the array, the array must contain a terminating null byte.
+.RE
+
+.SH OPTIONS
+The 
+.B _printf
+does not take any options.
+
+.SH SEE ALSO
+printf
+ 
+.SH BUGS
+No known bugs.
+
+.SH AUTHOR
+Cesar Vélez (883@holberton.com), Santiago Vélez ( 887@holberton.com)
