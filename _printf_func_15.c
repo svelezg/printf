@@ -32,12 +32,6 @@ int rot13_printf(va_list valist, char *str)
 /* local variable declaration */
 int position = 0, j, a = 0;
 char *vble, *null;
-null = "(null)";
-vble = va_arg(valist, char *);
-
-if (vble == NULL)
-	return (rot13_printf_null(null, str, position));
-
 char c[52][2] = {{'A', 'N'}, {'B', 'O'}, {'C', 'P'}, {'D', 'Q'}, {'E', 'R'},
 		{'F', 'S'}, {'G', 'T'}, {'H', 'U'}, {'I', 'V'}, {'J', 'W'},
 		{'K', 'X'}, {'L', 'Y'}, {'M', 'Z'}, {'N', 'A'}, {'O', 'B'},
@@ -49,6 +43,13 @@ char c[52][2] = {{'A', 'N'}, {'B', 'O'}, {'C', 'P'}, {'D', 'Q'}, {'E', 'R'},
 		{'l', 'y'}, {'m', 'z'}, {'n', 'a'}, {'o', 'b'}, {'p', 'c'},
 		{'q', 'd'}, {'r', 'e'}, {'s', 'f'}, {'t', 'g'}, {'u', 'h'},
 		{'v', 'i'}, {'w', 'j'}, {'x', 'k'}, {'y', 'l'}, {'z', 'm'}};
+
+
+null = "(null)";
+vble = va_arg(valist, char *);
+
+if (vble == NULL)
+	return (rot13_printf_null(null, str, position));
 
 while (*(vble + position) != '\0')
 {
