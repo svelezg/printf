@@ -20,7 +20,7 @@ if (character == '%')
 	position++;
 }
 else if (character != 'c' && character  != 's' && character != 'd' &&
-	character != 'i')
+	character != 'i' && character != 'b' && character != 'R')
 {
 	*(str +  position) = '%';
 	position++;
@@ -46,6 +46,7 @@ op_w_t func_write[] = {
 	{"s", string_printf},
 	{"d", decimal_printf},
 	{"i", integer_printf},
+	{"R", rot13_printf},
 	{NULL, NULL}
 };
 while (*(format + index))
