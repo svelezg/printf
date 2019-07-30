@@ -10,6 +10,7 @@ int _printf(const char *format, ...);
 
 char *str_printf(const char *format, va_list valist, char *str);
 int size_printf(const char *const format, va_list valist);
+int size_number(int n);
 
 int size_char(va_list valist, int size);
 int size_string(va_list valist, int size);
@@ -52,5 +53,3 @@ typedef struct op_write
 } op_w_t;
 
 #endif
-
-

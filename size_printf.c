@@ -17,7 +17,8 @@ if (character == '%')
 {
 	size++;
 }
-else if (character != 'c' && character != 's')
+else if (character != 'c' && character != 's' &&  character != 'd' &&
+	character != 'i')
 {
 	size = size + 2;
 }
@@ -37,6 +38,8 @@ int size = 0, index = 0, index_struct = 0;
 op_s_t func_size[] = {
 	{"c", size_char},
 	{"s", size_string},
+	{"d", size_decimal},
+	{"i", size_integer},
 	{NULL, NULL}
 };
 

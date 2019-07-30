@@ -19,7 +19,8 @@ if (character == '%')
 	*(str +  position) = '%';
 	position++;
 }
-else if (character != 'c' && character  != 's')
+else if (character != 'c' && character  != 's' && character != 'd' &&
+	character != 'i')
 {
 	*(str +  position) = '%';
 	position++;
@@ -42,7 +43,9 @@ int index = 0;
 int index_struct = 0, position = 0;
 op_w_t func_write[] = {
 	{"c", char_printf},
-{	"s", string_printf},
+	{"s", string_printf},
+	{"d", decimal_printf},
+	{"i", integer_printf},
 	{NULL, NULL}
 };
 while (*(format + index))
@@ -71,5 +74,3 @@ while (*(format + index))
 *(str + position) = '\0';
 return (str);
 }
-
-
