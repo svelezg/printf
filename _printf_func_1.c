@@ -13,11 +13,16 @@ int number_recursion(int num, char *str, int position);
  */
 int size_decimal(va_list valist, int size)
 {
-	int vble;
+int vble;
 
-	vble = va_arg(valist, int);
+vble = va_arg(valist, int);
+
+if (vble == 0)
+	size++;
+else
 	size += size_number(vble);
-	return (size);
+
+return (size);
 }
 /**
  * size_integer - Replicates the c standar library printf() function
@@ -28,11 +33,16 @@ int size_decimal(va_list valist, int size)
  */
 int size_integer(va_list valist, int size)
 {
-	int vble;
+int vble;
 
-	vble = va_arg(valist, int);
+vble = va_arg(valist, int);
+
+if (vble == 0)
+	size++;
+else
 	size += size_number(vble);
-	return (size);
+
+return (size);
 }
 /**
  * decimal_printf - Replicates the c standar library printf() function
@@ -47,6 +57,11 @@ int position = 0;
 int vble;
 
 vble = va_arg(valist, int);
+if (vble == 0)
+{
+	*(str +  position) = '0';
+	return (1);
+}
 position = number_recursion(vble, str, position);
 return (position);
 }
@@ -105,6 +120,11 @@ int position = 0;
 int vble;
 
 vble = va_arg(valist, int);
+if (vble == 0)
+{
+	*(str +  position) = '0';
+	return (1);
+}
 position = number_recursion(vble, str, position);
 return (position);
 }

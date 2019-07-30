@@ -2,12 +2,9 @@
 #include <stdarg.h>
 
 /**
- * size_number  - Capitalizes String
- * @n: string to convert
- *
- * Description: String to upper
- * Upper
- * Return: char
+ * size_number  - Number counter
+ * @n: Number
+ * Return: counter
 */
 int size_number(int n)
 {
