@@ -18,7 +18,6 @@ int size_decimal(va_list valist, int size);
 int size_integer(va_list valist, int size);
 int size_percentage(int size);
 
->>>>>>> parent of 62eecb3... task ro
 int char_printf(va_list valist, char *str);
 int string_printf(va_list valist, char *str);
 int decimal_printf(va_list valist, char *str);
