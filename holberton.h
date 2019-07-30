@@ -19,7 +19,6 @@ int size_string(va_list valist, int size);
 int size_decimal(va_list valist, int size);
 int size_integer(va_list valist, int size);
 int size_percentage(int size);
-int size_binary(va_list valist, int size);
 
 
 int char_printf(va_list valist, char *str);
@@ -27,7 +26,6 @@ int string_printf(va_list valist, char *str);
 int decimal_printf(va_list valist, char *str);
 int integer_printf(va_list valist, char *str);
 int percentage_printf(char *str);
-int binary_printf(va_list valist, char *str);
 
 int rot13(va_list valist, char *str);
 
