@@ -24,6 +24,7 @@ int decimal_printf(va_list valist, char *str);
 int integer_printf(va_list valist, char *str);
 int percentage_printf(char *str);
 
+
 int rot13(va_list valist, char *str);
 
 /**
