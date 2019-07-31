@@ -91,7 +91,7 @@ int unsigned_printf(va_list valist, char *str)
 int position = 0;
 int vble;
 
-vble = va_arg(valist, int);
+vble = va_arg(valist, unsigned int);
 position = number_recursion(vble, str, position, 0);
 return (position);
 }

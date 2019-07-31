@@ -89,7 +89,7 @@ int size_unsigned(va_list valist, int size)
 {
 int vble;
 
-vble = va_arg(valist, int);
+vble = va_arg(valist, unsigned int);
 size += size_number(vble);
 return (size);
 }
