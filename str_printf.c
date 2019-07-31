@@ -22,7 +22,7 @@ if (character == '%')
 else if (character != 'c' && character  != 's' && character != 'd'
 	&& character != 'i' && character != 'b' && character != 'R'
 	&& character != 'o' && character != 'x' && character != 'X'
-	&& character != 'u')
+	&& character != 'u' && character != 'r')
 {
 	*(str +  position) = '%';
 	position++;
@@ -54,6 +54,7 @@ op_w_t func_write[] = {
 	{"x", hex_l_printf},
 	{"X", hex_u_printf},
 	{"u", unsigned_printf},
+	{"r", reverse_printf},
 	{NULL, NULL}
 };
 while (*(format + index))
