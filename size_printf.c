@@ -20,7 +20,7 @@ if (character == '%')
 else if (character != 'c' && character != 's' &&  character != 'd'
 	&& character != 'i' && character != 'b' && character != 'R'
 	&& character != 'o' && character != 'x' && character != 'X'
-	&& character != 'u')
+	&& character != 'u' && character != 'r')
 {
 	size = size + 2;
 }
@@ -48,6 +48,7 @@ op_s_t func_size[] = {
 	{"x", size_hex_l},
 	{"X", size_hex_u},
 	{"u", size_unsigned},
+	{"r", size_string},
 	{NULL, NULL}
 };
 
