@@ -18,9 +18,6 @@ char *vble, *null;
 null = "(null)";
 vble = va_arg(valist, char *);
 
-printf("Signal\n");
-
-
 if (vble == NULL)
 {
 	vble = null;
