@@ -92,6 +92,14 @@ int position = 0;
 int vble;
 
 vble = va_arg(valist, unsigned int);
+
+if (vble == 0)
+{
+	*(str + position) = '0';
+	position++;
+	return (position);
+}
+
 position = number_recursion(vble, str, position, 0);
 return (position);
 }
