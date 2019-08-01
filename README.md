@@ -7,40 +7,62 @@ _printf replicates the C standard library printf() function.
 ## Authors
 * **Cesar Velez** 
 * **Santiago Velez**
-## Files### man_3_printf
+## Files
+
+### man_3_printf
 Man page for the  _printf function### _printf.c
 Main function file
 Call to argument list (va start and va copy)
 Call to size function
 Memory allocation
 Call to str (write) function.
-Call to write### holberton.h
+Call to write
+
+### holberton.h
 Header file.
 * Prototypes and
-* Struct definition### size_printf.c
+* Struct definition
+
+### size_printf.c
 * Main size function.
 * Handling of format string
-* Call through struct to auxiliary size functions### str_printf.c
+* Call through struct to auxiliary size functions
+
+### str_printf.c
 Main string write function
 Handling of format string
-Call through struct to auxiliary string generation functions### _printf_func_0.c
+Call through struct to auxiliary string generation functions
+
+### _printf_func_0.c
 Auxiliary size and string generation function for
 * characters (c) and
-* strings (s)### _printf_func_1.c
+* strings (s)
+
+### _printf_func_1.c
 Auxiliary size and string generation functions for
 * decimals (d) and
-* integers (i)### _printf_func_2.c
+* integers (i)
+
+### _printf_func_2.c
 Auxiliary size and string generation function for
 * bynary (b),
 * unsigned (u) and
-* octal (o) numbers.### _printf_func_3.c
+* octal (o) numbers.
+
+### _printf_func_3.c
 Auxiliary size and string generation function for
 * unsigned (u) and
-* hexadecimal (x, X) numbers.### _printf_func_14.c
+* hexadecimal (x, X) numbers.
+
+### _printf_func_14.c
 Auxiliary string generation function for
-* reverse string (r).### _printf_func_15.c
+* reverse string (r).
+
+### _printf_func_15.c
 Auxiliary string generation function for
-* string rot13 conversion (R).### number_printf.c
+* string rot13 conversion (R).
+
+### number_printf.c
 Auxiliary function for numbers sizing and number conversion acording to base (b, o , x, X).
 ## Task
 ### Task 0
