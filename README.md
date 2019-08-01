@@ -10,7 +10,9 @@ _printf replicates the C standard library printf() function.
 ## Files
 
 ### man_3_printf
-Man page for the  _printf function### _printf.c
+Man page for the  _printf function
+
+### _printf.c
 Main function file
 Call to argument list (va start and va copy)
 Call to size function
